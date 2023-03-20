@@ -12,9 +12,8 @@ class FbkDartNumberView extends StatefulWidget {
     //Kita akan membuat nilai number menjadi 0
     //Gunakan .tryParse !
 
-    /*
-    number = int.parse("23a") ;
-    */
+    // number = int.parse("23a") ?? 0;
+    number = int.tryParse("23a") ?? 0;
 
     return number == 0;
   }
@@ -27,9 +26,11 @@ class FbkDartNumberView extends StatefulWidget {
     //Kita akan membuang semua non-numeric Character dengan Regex
     //Gunakan .replaceAll(RegExp(r'[^0-9]+'), '')
 
-    /*
-    number = int.parse("23a") ;
-    */
+    // number = int.parse("23a");
+    number = int.tryParse("23a");
+    String output = number.toString().replaceAll(RegExp(r'[^0-9]+'), '');
+    number = int.tryParse(output);
+
     return number == 23;
   }
 
@@ -41,9 +42,8 @@ class FbkDartNumberView extends StatefulWidget {
     //Apakah tipe data yang seharusnya di input?
     //Perbaiki tipe data-nya agar kode ini bekerja!
 
-    /*
-    number = double.parse(29.23);
-    */
+    number = double.parse("29.23");
+
     return number == 29.23;
   }
 
@@ -53,9 +53,9 @@ class FbkDartNumberView extends StatefulWidget {
     //Perbaiki error-nya!
     //[TIPS] Gunakan .tryParse
     //Jika error setting nilainya ke 0
-    /*
-    number = double.parse("29.23a");
-    */
+
+    number = double.tryParse("29.23a") ?? 0;
+
     return number == 0;
   }
 
@@ -65,12 +65,12 @@ class FbkDartNumberView extends StatefulWidget {
     //sebagai Parameter
     //Sedangkan function getTotal hanya menerima double!
     //Perbaiki deklarasi ketiga variable ini menjadi double!
-    int total = 0;
-    int qty = 2;
-    int price = 100;
-    /*
+    double total = 0;
+    double qty = 2;
+    double price = 100;
+
     total = getTotal(qty, price);
-    */
+
     return total != 0;
   }
 
@@ -80,14 +80,14 @@ class FbkDartNumberView extends StatefulWidget {
   }
 
   bool? exercise6() {
-    int total = 0;
+    double total = 0;
     //Uncomment kode di bawah
     //Kode tersebut akan error, karena hasil pembagian adalah double
     //Sedangkan variabel total adalah integer.
     //Perbaiki tipe data dari total!
-    /*
+
     total = 23 / 2;
-    */
+
     return total != 0;
   }
 
@@ -98,6 +98,8 @@ class FbkDartNumberView extends StatefulWidget {
     //Perbaiki kode return di bawah, agar nilainya adalah 2500.25!
     //[TIPS] - .toStringAsFixed(2) adalah method yang dimiliki variabel double
     //Bukan String!
+    String priceConvert = price.toStringAsFixed(2);
+    price = double.parse(priceConvert);
     return price.toString() == "2500.25";
   }
 
@@ -105,6 +107,9 @@ class FbkDartNumberView extends StatefulWidget {
     int id = 1001;
     //Kita ingin membuat nilai id menjadi 00001001 (String)
     //Gunakan .padLeft(8, "0") pada return dibawah ini
+    String idConvert = id.toString().padLeft(8, "0");
+    id = int.parse(idConvert);
+
     return id.toString() == "00001001";
   }
 
@@ -138,12 +143,18 @@ class FbkDartNumberView extends StatefulWidget {
   bool? exercise11() {
     double number = 23.89;
     //Bulatkan number ke atas, menggunakan .ceil
+    int numberConvert = number.ceil();
+    String output = numberConvert.toString();
+    number = double.parse(output);
     return number == 24;
   }
 
   bool? exercise12() {
     double number = 23.39;
     //Bulatkan number ke bawah, menggunakan .floor
+    int numberConvert = number.floor();
+    String output = numberConvert.toString();
+    number = double.parse(output);
     return number == 23;
   }
 
@@ -151,7 +162,8 @@ class FbkDartNumberView extends StatefulWidget {
     int input = 12345;
     // Tuliskan kode untuk memverifikasi apakah input adalah bilangan genap
     bool? output;
-
+    if (input % 2 == 0) {
+    } else {}
     return output == false;
   }
 

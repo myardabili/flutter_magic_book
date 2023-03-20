@@ -9,6 +9,11 @@ class FbkDartIfStatementView extends StatefulWidget {
     // Tuliskan kode untuk menentukan apakah number adalah bilangan genap atau ganjil
     // Jika angka number adalah genap, maka assign variabel result dengan string "Genap".
     // Jika angka number adalah ganjil, maka assign variabel result dengan string "Ganjil".
+    if (number % 2 == 0) {
+      String result = "Genap";
+    } else {
+      String result = "Ganjil";
+    }
     String? result;
 
     return result == "Ganjil";
