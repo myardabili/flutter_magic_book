@@ -3,8 +3,6 @@ We believe, the class name must be unique.
 If there is a conflicting class name in this file,
 it means you have to rename it to something more unique.
 */
-export 'package:hyper_ui/config.dart';
-export 'package:hyper_ui/core_package.dart';
 export 'package:hyper_ui/module/online_class/execises/oce_dart_basic/controller/oce_dart_basic_controller.dart';
 export 'package:hyper_ui/module/online_class/execises/oce_dart_basic/view/oce_dart_basic_view.dart';
 export 'package:hyper_ui/module/online_class/execises/oce_dart_certification/controller/oce_dart_certification_controller.dart';
@@ -472,7 +470,6 @@ export 'package:hyper_ui/service/auth_service/auth_service.dart';
 export 'package:hyper_ui/service/dummy_service/dummy_service.dart';
 export 'package:hyper_ui/service/main_storage/main_storage.dart';
 export 'package:hyper_ui/service/product_service/product_service.dart';
-export 'package:hyper_ui/setup.dart';
 export 'package:hyper_ui/shared/theme/theme.dart';
 export 'package:hyper_ui/shared/theme/theme_config.dart';
 export 'package:hyper_ui/shared/theme/theme_dark.dart';
@@ -516,4 +513,6 @@ export 'package:hyper_ui/shared/widget/form/__form_example.dart';
 export 'package:hyper_ui/shared/widget/list/list_view.dart';
 export 'package:hyper_ui/shared/widget/menu/menu.dart';
 export 'package:hyper_ui/shared/widget/scaffold/q_scaffold.dart';
-export 'package:hyper_ui/state_util.dart';
+export 'core_package.dart';
+export 'state_util.dart';
+export 'setup.dart';
